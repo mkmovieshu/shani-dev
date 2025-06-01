@@ -2,107 +2,176 @@
 <html lang="te">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>శని దేవుడు</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu&display=swap');
+
     body {
       font-family: 'Noto Sans Telugu', sans-serif;
-      background-color: #fffaf0;
-      margin: 0;
-      padding: 0;
-      color: #333;
+      margin: 0; padding: 0;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2723;
     }
-    .main-title {
-      background-color: #4a148c;
-      color: #fff;
-      text-align: center;
+
+    .overlay {
+      background-color: rgba(255, 243, 224, 0.85); /* Slight creamy overlay for readability */
+      min-height: 100vh;
       padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      border-bottom: 4px solid #ff9800;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    .main-title {
+      background-color: #5d4037;
+      color: #ffd54f;
+      font-size: 36px;
+      font-weight: 900;
+      text-align: center;
+      padding: 25px 40px;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px #3e2723;
+    }
+    .main-title:hover {
+      transform: scale(1.05);
+    }
+
+    .section-wrapper {
+      background-color: #fff3e0;
+      border: 3px solid #ffb300;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 8px 18px rgba(255, 152, 0, 0.4);
+      padding: 10px 0 20px 0;
+    }
+
     .section {
       background-color: #ffe0b2;
-      margin: 20px;
-      padding: 15px;
+      margin: 15px 40px;
+      padding: 16px;
       border-radius: 15px;
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 22px;
+      font-weight: 700;
       cursor: pointer;
-      border: 2px solid #ffb74d;
+      border: 2px solid #ff9800;
       text-align: center;
+      box-shadow: 0 3px 10px rgba(255, 152, 0, 0.4);
+      transition: background-color 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
     }
+    .section:hover {
+      background-color: #ffcc80;
+      box-shadow: 0 6px 20px rgba(255, 152, 0, 0.7);
+    }
+
     .content {
       display: none;
-      background-color: #fff3e0;
-      margin: -10px 20px 20px 20px;
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px dashed #ffcc80;
+      background-color: #fff8e1;
+      margin: 0 50px 15px 50px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1.5px dashed #ffb74d;
       font-size: 18px;
+      color: #5d4037;
+      line-height: 1.5;
+      box-shadow: inset 0 0 10px #ffcc80;
+      user-select: text;
     }
+
     iframe {
-      border-radius: 10px;
+      border-radius: 12px;
+      margin-top: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     }
+
     button {
       background-color: #ff9800;
       color: white;
       border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin: 5px;
-      font-size: 16px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin: 8px 12px;
+      font-size: 17px;
       cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 3px 10px rgba(255, 152, 0, 0.7);
+      transition: background-color 0.3s ease;
+      user-select: none;
     }
     button:hover {
-      background-color: #e65100;
+      background-color: #ef6c00;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
 
-  <div class="main-title">శని దేవుడు</div>
+    <div class="main-title" onclick="playClickSound()">శని దేవుడు</div>
 
-  <div class="section" onclick="toggleContent('avatara')">🔹 శని దేవుని యొక్క అవతారం</div>
-  <div class="content" id="avatara">
-    శని దేవుడు సూర్యుని పుత్రుడు. ఆయన న్యాయాన్ని నిలబెట్టే గ్రహదేవత. ఆయన క్రూరదృష్టిని నివారించేందుకు శనివారాన్ని పవిత్రంగా పాటిస్తారు.
-  </div>
+    <div class="section-wrapper">
 
-  <div class="section" onclick="toggleContent('mahimalu')">🔹 శని దేవుని యొక్క మహిమలు</div>
-  <div class="content" id="mahimalu">
-    శని దోషాలు ఉంటే వ్యాధులు, ఆర్థిక నష్టాలు, menthal stress లాంటి సమస్యలు వస్తాయి. కానీ శని అనుగ్రహం ఉంటే ధనసంపద, స్థిరత, ధైర్యం లభిస్తాయి.
-  </div>
-
-  <div class="section" onclick="toggleContent('alayalu')">🔹 ప్రముఖ ఆలయాలు</div>
-  <div class="content" id="alayalu">
-    • శనిశ్చర దేవస్థానం – శింగనాపూర్ (మహారాష్ట్ర)<br/>
-    • తాళ్లపాక శనేశ్వర స్వామి ఆలయం (ఆంధ్రప్రదేశ్)<br/>
-    • కొచ్చిన్ శని మందిర్ (కేరళ)<br/>
-    • తంజావూరు శనేశ్వర ఆలయం (తమిళనాడు)
-  </div>
-
-  <div class="section" onclick="toggleContent('pooja')">🔹 పూజ చేయు విధానం</div>
-  <div class="content" id="pooja">
-    శనివారానాడు నల్ల నూనెతో దీపం వెలిగించాలి. నీలం రంగు వస్త్రాలు ధరించి శని గాయత్రి మంత్రం పఠించాలి. శని తైలాభిషేకం చేయడం వల్ల కష్టాలు తొలగుతాయని నమ్మకం ఉంది.
-
-    <div class="section" onclick="toggleContent('videos')">🎥 వీడియోలు</div>
-    <div class="content" id="videos">
-      <div id="videoPlayer">
-        <iframe id="ytplayer" width="100%" height="220" src="https://www.youtube.com/embed/E2oMR1eXJcI" frameborder="0" allowfullscreen></iframe>
+      <div class="section" onclick="toggleContent('avatara')">🔹 శని దేవుని యొక్క అవతారం</div>
+      <div class="content" id="avatara">
+        శని దేవుడు సూర్యుని పుత్రుడు. ఆయన న్యాయాన్ని నిలబెట్టే గ్రహదేవత. ఆయన క్రూరదృష్టిని నివారించేందుకు శనివారాన్ని పవిత్రంగా పాటిస్తారు.
       </div>
-      <div style="text-align: center; margin-top: 10px;">
-        <button onclick="prevVideo()">⏮️ వెనక</button>
-        <button onclick="nextVideo()">⏭️ ముందుకు</button>
+
+      <div class="section" onclick="toggleContent('mahimalu')">🔹 శని దేవుని యొక్క మహిమలు</div>
+      <div class="content" id="mahimalu">
+        శని దోషాలు ఉంటే వ్యాధులు, ఆర్థిక నష్టాలు, మానసిక ఒత్తిడి లాంటి సమస్యలు వస్తాయి. కానీ శని అనుగ్రహం ఉంటే ధనసంపద, స్థిరత, ధైర్యం లభిస్తాయి.
       </div>
+
+      <div class="section" onclick="toggleContent('alayalu')">🔹 ప్రముఖ ఆలయాలు</div>
+      <div class="content" id="alayalu">
+        • శనిశ్చర దేవస్థానం – శింగనాపూర్ (మహారాష్ట్ర)<br />
+        • తాళ్లపాక శనేశ్వర స్వామి ఆలయం (ఆంధ్రప్రదేశ్)<br />
+        • కొచ్చిన్ శని మందిర్ (కేరళ)<br />
+        • తంజావూరు శనేశ్వర ఆలయం (తమిళనాడు)
+      </div>
+
+      <div class="section" onclick="toggleContent('pooja')">🔹 పూజ చేయు విధానం</div>
+      <div class="content" id="pooja">
+        శనివారానాడు నల్ల నూనెతో దీపం వెలిగించాలి. నీలం రంగు వస్త్రాలు ధరించి శని గాయత్రి మంత్రం పఠించాలి. శని తైలాభిషేకం చేయడం వల్ల కష్టాలు తొలగుతాయని నమ్మకం ఉంది.
+
+        <div class="section" onclick="toggleContent('videos')">🎥 వీడియోలు</div>
+        <div class="content" id="videos">
+          <div id="videoPlayer">
+            <iframe id="ytplayer" width="100%" height="220" src="https://www.youtube.com/embed/E2oMR1eXJcI" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div style="text-align: center; margin-top: 10px;">
+            <button onclick="prevVideo()">⏮️ వెనక</button>
+            <button onclick="nextVideo()">⏭️ ముందుకు</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
   <script>
     function toggleContent(id) {
-      var el = document.getElementById(id);
-      el.style.display = (el.style.display === "block") ? "none" : "block";
+      const el = document.getElementById(id);
+      if(el.style.display === "block") {
+        el.style.display = "none";
+      } else {
+        el.style.display = "block";
+      }
+    }
+
+    function playClickSound() {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
     }
 
     const videoUrls = [
@@ -129,6 +198,5 @@
       updateVideo();
     }
   </script>
-
 </body>
 </html>
