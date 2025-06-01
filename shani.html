@@ -1,121 +1,132 @@
 <!DOCTYPE html>
 <html lang="te">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>శని దేవుడు</title>
   <style>
     body {
       font-family: 'Noto Sans Telugu', sans-serif;
-      background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
+      background-color: #fffaf0;
       margin: 0;
       padding: 0;
+      color: #333;
     }
-
-    .main-header {
-      background: linear-gradient(to right, #ff6f00, #ff8f00);
-      color: white;
-      font-size: 42px;
-      font-weight: bold;
-      padding: 25px 20px;
+    .main-title {
+      background-color: #4a148c;
+      color: #fff;
       text-align: center;
-      border-bottom: 5px solid #e65100;
-      text-shadow: 1px 1px 3px #000;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    .content-wrapper {
-      background-color: #ffffff;
-      margin: 30px auto;
       padding: 20px;
-      border-radius: 16px;
-      width: 95%;
-      max-width: 800px;
-      border: 3px solid #ffb74d;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      font-size: 28px;
+      font-weight: bold;
+      border-bottom: 4px solid #ff9800;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
     .section {
       background-color: #ffe0b2;
-      border-radius: 20px;
+      margin: 20px;
       padding: 15px;
-      margin: 15px auto;
-      cursor: pointer;
+      border-radius: 15px;
+      font-size: 20px;
       font-weight: bold;
-      border: 2px solid #ff9800;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease;
+      cursor: pointer;
+      border: 2px solid #ffb74d;
       text-align: center;
     }
-
-    .section:hover {
-      transform: scale(1.02);
-      background-color: #ffd180;
-    }
-
     .content {
       display: none;
       background-color: #fff3e0;
+      margin: -10px 20px 20px 20px;
       padding: 15px;
-      margin-top: 5px;
-      border-radius: 12px;
-      text-align: left;
-      border: 1px solid #ffb74d;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      border: 1px dashed #ffcc80;
+      font-size: 18px;
+    }
+    iframe {
+      border-radius: 10px;
+    }
+    button {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px;
       font-size: 16px;
-      line-height: 1.6;
+      cursor: pointer;
     }
-
-    ul {
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
+    button:hover {
+      background-color: #e65100;
     }
   </style>
 </head>
 <body>
 
-  <div class="main-header">🪐 ధర్మరక్షకుడు శని దేవుడు</div>
+  <div class="main-title">శని దేవుడు</div>
 
-  <div class="content-wrapper">
+  <div class="section" onclick="toggleContent('avatara')">🔹 శని దేవుని యొక్క అవతారం</div>
+  <div class="content" id="avatara">
+    శని దేవుడు సూర్యుని పుత్రుడు. ఆయన న్యాయాన్ని నిలబెట్టే గ్రహదేవత. ఆయన క్రూరదృష్టిని నివారించేందుకు శనివారాన్ని పవిత్రంగా పాటిస్తారు.
+  </div>
 
-    <div class="section" onclick="toggleContent('avatara')">🔹 శని దేవుని యొక్క అవతారం</div>
-    <div class="content" id="avatara">
-      శని దేవుడు సూర్యుని కుమారుడు మరియు ఛాయాదేవి పుత్రుడు. ఆయన న్యాయం మరియు శ్రమకు ప్రతీకగా భావించబడతాడు. ధర్మాన్ని నిలబెట్టే శక్తిగా పూజిస్తారు.
+  <div class="section" onclick="toggleContent('mahimalu')">🔹 శని దేవుని యొక్క మహిమలు</div>
+  <div class="content" id="mahimalu">
+    శని దోషాలు ఉంటే వ్యాధులు, ఆర్థిక నష్టాలు, menthal stress లాంటి సమస్యలు వస్తాయి. కానీ శని అనుగ్రహం ఉంటే ధనసంపద, స్థిరత, ధైర్యం లభిస్తాయి.
+  </div>
+
+  <div class="section" onclick="toggleContent('alayalu')">🔹 ప్రముఖ ఆలయాలు</div>
+  <div class="content" id="alayalu">
+    • శనిశ్చర దేవస్థానం – శింగనాపూర్ (మహారాష్ట్ర)<br/>
+    • తాళ్లపాక శనేశ్వర స్వామి ఆలయం (ఆంధ్రప్రదేశ్)<br/>
+    • కొచ్చిన్ శని మందిర్ (కేరళ)<br/>
+    • తంజావూరు శనేశ్వర ఆలయం (తమిళనాడు)
+  </div>
+
+  <div class="section" onclick="toggleContent('pooja')">🔹 పూజ చేయు విధానం</div>
+  <div class="content" id="pooja">
+    శనివారానాడు నల్ల నూనెతో దీపం వెలిగించాలి. నీలం రంగు వస్త్రాలు ధరించి శని గాయత్రి మంత్రం పఠించాలి. శని తైలాభిషేకం చేయడం వల్ల కష్టాలు తొలగుతాయని నమ్మకం ఉంది.
+
+    <div class="section" onclick="toggleContent('videos')">🎥 వీడియోలు</div>
+    <div class="content" id="videos">
+      <div id="videoPlayer">
+        <iframe id="ytplayer" width="100%" height="220" src="https://www.youtube.com/embed/E2oMR1eXJcI" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div style="text-align: center; margin-top: 10px;">
+        <button onclick="prevVideo()">⏮️ వెనక</button>
+        <button onclick="nextVideo()">⏭️ ముందుకు</button>
+      </div>
     </div>
-
-    <div class="section" onclick="toggleContent('mahimalu')">🔹 శని దేవుని యొక్క మహిమలు</div>
-    <div class="content" id="mahimalu">
-      శని దేవుడు పాపగ్రహంగా భావించబడినప్పటికీ, నిజాయితీగా జీవించే వారికి ఆయన రక్షకుడిగా ఉంటాడు. ఆయన దృష్టి కఠినమైనదైనా, భక్తితో పూజిస్తే శ్రేయస్సు కలుగుతుంది.
-    </div>
-
-    <div class="section" onclick="toggleContent('alayalu')">🔹 ప్రముఖ ఆలయాలు</div>
-    <div class="content" id="alayalu">
-      <ul>
-        <li>శని శింగనాపూర్ ఆలయం – మహారాష్ట్ర</li>
-        <li>తిరునల్లార్ శని భగవాన్ ఆలయం – తమిళనాడు</li>
-        <li>శని మహాత్మ్య ఆలయం – కర్ణాటక</li>
-        <li>శనేశ్వర స్వామి ఆలయం – ఆంధ్రప్రదేశ్</li>
-      </ul>
-    </div>
-
-    <div class="section" onclick="toggleContent('pooja')">🔹 పూజ చేయు విధానం</div>
-    <div class="content" id="pooja">
-      శనివారానాడు నల్ల నూనెతో దీపం వెలిగించాలి. నీలం రంగు వస్త్రాలు ధరించి శని గాయత్రి మంత్రం పఠించాలి. శని తైలాభిషేకం చేయడం వల్ల కష్టాలు తొలగుతాయని నమ్మకం ఉంది.
-    </div>
-
   </div>
 
   <script>
     function toggleContent(id) {
-      var content = document.getElementById(id);
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
+      var el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+
+    const videoUrls = [
+      "https://www.youtube.com/embed/E2oMR1eXJcI",
+      "https://www.youtube.com/embed/LiSIB0UYQgw",
+      "https://www.youtube.com/embed/hsBlUC39Nc0",
+      "https://www.youtube.com/embed/YhU2Q7G6umM",
+      "https://www.youtube.com/embed/hsBlUC39Nc0"
+    ];
+
+    let currentVideo = 0;
+
+    function updateVideo() {
+      document.getElementById("ytplayer").src = videoUrls[currentVideo];
+    }
+
+    function nextVideo() {
+      currentVideo = (currentVideo + 1) % videoUrls.length;
+      updateVideo();
+    }
+
+    function prevVideo() {
+      currentVideo = (currentVideo - 1 + videoUrls.length) % videoUrls.length;
+      updateVideo();
     }
   </script>
 
