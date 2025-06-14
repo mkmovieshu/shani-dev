@@ -10,9 +10,9 @@
     body {
       font-family: 'Noto Sans Telugu', sans-serif;
       background: linear-gradient(rgba(255, 251, 235, 0.9), rgba(255, 240, 200, 0.95)),
-        url('https://i.imgur.com/5vI4wZh.jpg') no-repeat center center fixed;
+                  url('https://i.imgur.com/5vI4wZh.jpg') no-repeat center center fixed;
       background-size: cover;
-      margin: 30px;
+      margin: 10px;
       padding: 0;
       display: flex;
       justify-content: center;
@@ -23,35 +23,30 @@
       border: 5px solid #d67f2a;
       border-radius: 25px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      width: 90%;
+      width: 95%;
       max-width: 800px;
-      padding: 30px 40px 40px 40px;
+      padding: 20px;
       position: relative;
     }
 
     h1 {
       font-family: 'Baloo Tammudu 2', cursive;
-      font-weight: 700;
-      font-size: 36px;
+      font-size: 32px;
       color: #7a3700;
       background: linear-gradient(145deg, #f7d488, #d67f2a);
-      padding: 16px 20px;
+      padding: 15px;
       border-radius: 30px 30px 20px 20px;
       box-shadow: 4px 4px 10px #b36f19, inset 2px 2px 5px #ffdb7f;
       text-align: center;
-      margin: 0 0 30px 0;
+      margin-bottom: 25px;
       user-select: none;
-      letter-spacing: 1px;
-      position: relative;
-      z-index: 10;
     }
 
     .headings-box {
       background: linear-gradient(145deg, #fff8dc, #ffe6b3);
       border-radius: 30px;
-      padding: 25px 30px;
+      padding: 15px;
       box-shadow: inset 2px 2px 10px rgba(255, 190, 100, 0.3);
-      position: relative;
     }
 
     h2 {
@@ -59,15 +54,14 @@
       background: linear-gradient(145deg, #f8c291, #e94560);
       color: white;
       text-align: center;
-      padding: 14px 0;
+      padding: 10px;
       border-radius: 40px;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 900;
       cursor: pointer;
-      margin-top: 30px;
-      transition: background 0.3s ease, color 0.3s ease;
+      margin-top: 20px;
+      transition: background 0.3s ease;
       user-select: none;
-      letter-spacing: 1.2px;
     }
 
     h2.active {
@@ -75,26 +69,21 @@
       color: #b2dfdb;
     }
 
-    h2:hover:not(.active) {
-      background: linear-gradient(145deg, #e94560, #f8c291);
-    }
-
     .content-box {
       display: none;
-      margin-top: 20px;
+      margin-top: 15px;
       font-size: 16px;
       color: #4e342e;
       background-color: #fff8dc;
-      padding: 16px;
+      padding: 12px;
       border-left: 6px solid #ff7043;
       border-radius: 12px;
-      line-height: 1.8;
-      box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
+      line-height: 1.7;
     }
 
     .sub-heading {
       font-family: 'Rajdhani', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       margin-top: 20px;
       color: #d35400;
@@ -112,7 +101,6 @@
 
     iframe {
       width: 100%;
-      max-width: 100%;
       height: 220px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -120,21 +108,18 @@
 
     .video-buttons {
       margin-top: 12px;
-      text-align: center;
     }
 
     .video-buttons button {
       background: #e67e22;
       color: white;
       border: none;
-      padding: 10px 18px;
-      margin: 0 10px;
-      border-radius: 35px;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 25px;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
-      user-select: none;
     }
 
     .video-buttons button:hover {
@@ -144,53 +129,6 @@
     .video-buttons button:disabled {
       background: #bbb;
       cursor: not-allowed;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-
-      .page-container {
-        padding: 20px 15px 30px 15px;
-        border-width: 3px;
-      }
-
-      h1 {
-        font-size: 26px;
-        padding: 10px 15px;
-        letter-spacing: 0.5px;
-      }
-
-      .headings-box {
-        padding: 15px 10px;
-      }
-
-      h2 {
-        font-size: 18px;
-        padding: 10px;
-      }
-
-      .content-box {
-        font-size: 14px;
-        padding: 12px;
-      }
-
-      .sub-heading {
-        font-size: 16px;
-        padding: 8px;
-      }
-
-      .video-buttons button {
-        font-size: 14px;
-        padding: 8px 12px;
-        margin: 5px;
-      }
-
-      iframe {
-        height: 160px;
-        border-radius: 10px;
-      }
     }
   </style>
 </head>
@@ -202,24 +140,19 @@
       <h2 onclick="toggleContent(this, 'charitra1')">శివుని అవతారం</h2>
       <div id="charitra1" class="content-box">
         <p>
-          శివుడి జననం గురించి హిందూ పురాణాల్లో అనేక కథలు ఉన్నాయి.
-          <h3>కొన్ని పురాణాల ప్రకారం</h3>
-          బ్రహ్మదేవుడు సృష్టిని చేస్తున్నప్పుడు ఆయన తన మనసు నుండి మానస పుత్రులను...
-          <h3>శివుడు స్వయంభూవుడు</h3>
-          చాలా హిందూ గ్రంథాలు శివుడికి జననం లేదని, ఆయన్ను స్వయంభూవుడిగా చెబుతాయి...
+          <strong>శివుడి జననం గురించి:</strong> కొన్ని పురాణాల ప్రకారం బ్రహ్మదేవుడు సృష్టిని చేస్తున్న సమయంలో...
+          <br><strong>శివుడు స్వయంభూవుడు:</strong> ఆయన నిరాకారుడు, సర్వవ్యాపి, ఆదిమ మరియు అంతిమ శక్తి.
         </p>
       </div>
 
       <h2 onclick="toggleContent(this, 'charitra2')">శివుడి మహిమలు</h2>
       <div id="charitra2" class="content-box">
-        <p>శివుడిని మహాదేవుడు అని పిలుస్తారు, అంటే దేవతలలో కెల్లా గొప్పవాడు అనే అర్థం.</p>
+        <p>శివుడిని మహాదేవుడు అంటారు. ఆయన కాలాన్ని అధిగమించిన శక్తి. భక్తుడి భావనకే స్పందిస్తాడు.</p>
       </div>
 
       <h2 onclick="toggleContent(this, 'pooja')">పూజా విధానాలు</h2>
       <div id="pooja" class="content-box">
-        <p>
-          శివుడిని పూజించడం అంటే కేవలం ఆచారాలు పాటించడం కాదు, అది భక్తితో కూడిన ఒక ఆధ్యాత్మిక ప్రయాణం...
-        </p>
+        <p>భక్తితో కూడిన పూజ శివునికి ప్రీతికరం. పుష్పాలు, జలధార, బిల్వదళాలతో పూజించవచ్చు.</p>
         <div class="sub-heading" onclick="toggleVideoSection()">వీడియోలు</div>
         <div class="video-container" id="videoSection" style="display: none;">
           <iframe id="poojaVideo" src="" frameborder="0" allowfullscreen></iframe>
@@ -232,12 +165,27 @@
 
       <h2 onclick="toggleContent(this, 'transport')">రవాణా సౌకర్యాలు</h2>
       <div id="transport" class="content-box">
-        <p>భారతదేశంలోని ప్రసిద్ధ శివాలయాలకు వెళ్లేందుకు బస్సులు, రైళ్ళు, విమానాలు అందుబాటులో ఉన్నాయి.</p>
+        <p>శివాలయాలకు ట్రైన్, బస్సు, ప్రైవేట్ వాహనాల ద్వారా సులభంగా చేరవచ్చు.</p>
       </div>
     </div>
   </div>
 
   <script>
+    function toggleContent(heading, id) {
+      const content = document.getElementById(id);
+      const isActive = heading.classList.contains('active');
+      const allContents = document.querySelectorAll('.content-box');
+      const allHeadings = document.querySelectorAll('h2');
+
+      allContents.forEach(c => c.style.display = 'none');
+      allHeadings.forEach(h => h.classList.remove('active'));
+
+      if (!isActive) {
+        content.style.display = 'block';
+        heading.classList.add('active');
+      }
+    }
+
     const videos = [
       "https://www.youtube.com/embed/FeerEgUfJik",
       "https://www.youtube.com/embed/oD4XMHFxKZg",
@@ -245,31 +193,23 @@
       "https://www.youtube.com/embed/P0XpOUJBxpw",
       "https://www.youtube.com/embed/YpgljreMaGY"
     ];
+
     let currentVideoIndex = 0;
-
-    function toggleContent(heading, id) {
-      const content = document.getElementById(id);
-      const allContents = document.querySelectorAll('.content-box');
-      const allHeadings = document.querySelectorAll('h2');
-
-      allContents.forEach(box => box.style.display = 'none');
-      allHeadings.forEach(h => h.classList.remove('active'));
-
-      content.style.display = 'block';
-      heading.classList.add('active');
-    }
 
     function toggleVideoSection() {
       const section = document.getElementById('videoSection');
-      const frame = document.getElementById('poojaVideo');
-      section.style.display = section.style.display === 'none' ? 'block' : 'none';
-      if (section.style.display === 'block' && !frame.src) {
-        frame.src = videos[currentVideoIndex];
+      const iframe = document.getElementById('poojaVideo');
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        iframe.src = videos[currentVideoIndex];
+      } else {
+        section.style.display = 'none';
+        iframe.src = '';
       }
     }
 
-    function changeVideo(step) {
-      currentVideoIndex += step;
+    function changeVideo(direction) {
+      currentVideoIndex += direction;
       if (currentVideoIndex < 0) currentVideoIndex = 0;
       if (currentVideoIndex >= videos.length) currentVideoIndex = videos.length - 1;
       document.getElementById('poojaVideo').src = videos[currentVideoIndex];
