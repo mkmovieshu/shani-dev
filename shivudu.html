@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>శివుడు</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&family=Rajdhani&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
 
     body {
       font-family: 'Noto Sans Telugu', sans-serif;
       background: linear-gradient(rgba(255, 251, 235, 0.9), rgba(255, 240, 200, 0.95)),
-                  url('https://i.imgur.com/5vI4wZh.jpg') no-repeat center center fixed;
+        url('https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1749921235243.jpg') no-repeat center center fixed;
       background-size: cover;
-      margin: 10px;
+      margin: 30px;
       padding: 0;
       display: flex;
       justify-content: center;
@@ -22,45 +22,46 @@
       background: #fffde7;
       border: 5px solid #d67f2a;
       border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      width: 95%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      width: 90%;
       max-width: 800px;
-      padding: 20px;
+      padding: 30px 40px;
       position: relative;
+    }
+
+    .god-img {
+      width: 130px;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
       font-family: 'Baloo Tammudu 2', cursive;
-      font-size: 32px;
+      font-weight: 700;
+      font-size: 36px;
       color: #7a3700;
       background: linear-gradient(145deg, #f7d488, #d67f2a);
-      padding: 15px;
+      padding: 14px 25px;
       border-radius: 30px 30px 20px 20px;
       box-shadow: 4px 4px 10px #b36f19, inset 2px 2px 5px #ffdb7f;
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       user-select: none;
-    }
-
-    .headings-box {
-      background: linear-gradient(145deg, #fff8dc, #ffe6b3);
-      border-radius: 30px;
-      padding: 15px;
-      box-shadow: inset 2px 2px 10px rgba(255, 190, 100, 0.3);
+      letter-spacing: 1.5px;
     }
 
     h2 {
-      font-family: 'Rajdhani', sans-serif;
       background: linear-gradient(145deg, #f8c291, #e94560);
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
       border-radius: 40px;
-      font-size: 20px;
-      font-weight: 900;
+      font-size: 22px;
+      font-weight: 700;
       cursor: pointer;
       margin-top: 20px;
-      transition: background 0.3s ease;
       user-select: none;
     }
 
@@ -71,148 +72,118 @@
 
     .content-box {
       display: none;
-      margin-top: 15px;
-      font-size: 16px;
+      margin-top: 12px;
+      font-size: 17px;
       color: #4e342e;
       background-color: #fff8dc;
-      padding: 12px;
+      padding: 14px;
       border-left: 6px solid #ff7043;
       border-radius: 12px;
       line-height: 1.7;
+      box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
     }
 
-    .sub-heading {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-top: 20px;
-      color: #d35400;
-      text-align: center;
-      background-color: #ffe0b2;
-      padding: 10px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .video-container {
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    iframe {
-      width: 100%;
-      height: 220px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .video-buttons {
-      margin-top: 12px;
-    }
-
-    .video-buttons button {
-      background: #e67e22;
+    .read-btn {
+      background-color: #8e44ad;
       color: white;
-      border: none;
       padding: 8px 16px;
-      margin: 5px;
-      border-radius: 25px;
       font-size: 16px;
-      font-weight: bold;
+      border: none;
+      border-radius: 20px;
       cursor: pointer;
+      margin-top: 10px;
     }
 
-    .video-buttons button:hover {
-      background: #d35400;
+    .read-btn:hover {
+      background-color: #732d91;
     }
 
-    .video-buttons button:disabled {
-      background: #bbb;
-      cursor: not-allowed;
+    @media (max-width: 600px) {
+      .page-container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 18px;
+        padding: 10px;
+      }
+
+      .content-box {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page-container">
+    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1747465495797.jpg" alt="శివుడి చిత్రం" class="god-img" />
     <h1>🕉 శివుడు 🕉</h1>
 
-    <div class="headings-box">
-      <h2 onclick="toggleContent(this, 'charitra1')">శివుని అవతారం</h2>
-      <div id="charitra1" class="content-box">
-        <p>
-          <strong>శివుడి జననం గురించి:</strong> కొన్ని పురాణాల ప్రకారం బ్రహ్మదేవుడు సృష్టిని చేస్తున్న సమయంలో...
-          <br><strong>శివుడు స్వయంభూవుడు:</strong> ఆయన నిరాకారుడు, సర్వవ్యాపి, ఆదిమ మరియు అంతిమ శక్తి.
-        </p>
-      </div>
+    <!-- 👉 సెక్షన్ 1 -->
+    <h2 onclick="toggleContent(this, 'avataram')">శివుని అవతారం</h2>
+    <div id="avataram" class="content-box">
+      <p>శివుడు జన్మ రహితుడు. కొన్ని పురాణాల ప్రకారం ఆయన బ్రహ్మానికీ ఆధారం, విశ్వానికి మూల కారణం. శివుడు స్వయంభూ – అనగా తాను తానే ఆవిర్భవించినవాడు.</p>
+      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+    </div>
 
-      <h2 onclick="toggleContent(this, 'charitra2')">శివుడి మహిమలు</h2>
-      <div id="charitra2" class="content-box">
-        <p>శివుడిని మహాదేవుడు అంటారు. ఆయన కాలాన్ని అధిగమించిన శక్తి. భక్తుడి భావనకే స్పందిస్తాడు.</p>
-      </div>
+    <!-- 👉 సెక్షన్ 2 -->
+    <h2 onclick="toggleContent(this, 'mahima')">శివుడి మహిమ</h2>
+    <div id="mahima" class="content-box">
+      <p>శివుడు భక్తులకు దయగలవాడు, శత్రువులకు ఉగ్రరూపుడిగా ఉంటాడు. ఆయన తాండవం సృష్టి, లయం, స్థితిని సూచిస్తుంది. శివుడు లోకాన్ని నిర్వహించే త్రిమూర్తులలో ఒకడు.</p>
+      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+    </div>
 
-      <h2 onclick="toggleContent(this, 'pooja')">పూజా విధానాలు</h2>
-      <div id="pooja" class="content-box">
-        <p>భక్తితో కూడిన పూజ శివునికి ప్రీతికరం. పుష్పాలు, జలధార, బిల్వదళాలతో పూజించవచ్చు.</p>
-        <div class="sub-heading" onclick="toggleVideoSection()">వీడియోలు</div>
-        <div class="video-container" id="videoSection" style="display: none;">
-          <iframe id="poojaVideo" src="" frameborder="0" allowfullscreen></iframe>
-          <div class="video-buttons">
-            <button id="prevBtn" onclick="changeVideo(-1)">Previous</button>
-            <button id="nextBtn" onclick="changeVideo(1)">Next</button>
-          </div>
-        </div>
-      </div>
+    <!-- 👉 సెక్షన్ 3 -->
+    <h2 onclick="toggleContent(this, 'alayalu')">శివుడికి ప్రసిద్ధ ఆలయాలు</h2>
+    <div id="alayalu" class="content-box">
+      <p>శ్రీశైలము, కాశీ విశ్వనాథ్, చిదంబరం, సోమనాథ్, త్రయంబకేశ్వర్ వంటి అనేక ప్రసిద్ధ ఆలయాలు శివుడికి అంకితమయ్యాయి. ఇవి పవిత్ర యాత్రాక్షేత్రాలు.</p>
+      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+    </div>
 
-      <h2 onclick="toggleContent(this, 'transport')">రవాణా సౌకర్యాలు</h2>
-      <div id="transport" class="content-box">
-        <p>శివాలయాలకు ట్రైన్, బస్సు, ప్రైవేట్ వాహనాల ద్వారా సులభంగా చేరవచ్చు.</p>
-      </div>
+    <!-- 👉 సెక్షన్ 4 -->
+    <h2 onclick="toggleContent(this, 'pooja')">శివ పూజా విధానం</h2>
+    <div id="pooja" class="content-box">
+      <p>ప్రతిరోజూ శివునికి బిల్వదళాలు సమర్పించడం, లింగాభిషేకం చేయడం, “ఓం నమః శివాయ” జపం చేయడం శ్రేయస్కరం. సోమవారం శివుని ప్రత్యేక పూజా దినంగా భావించబడుతుంది.</p>
+      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+    </div>
+
+    <!-- 👉 సెక్షన్ 5 -->
+    <h2 onclick="toggleContent(this, 'jyotirlinga')">శివ జ్యోతిర్లింగాల విశిష్టత</h2>
+    <div id="jyotirlinga" class="content-box">
+      <p>భారతదేశంలో 12 ప్రధాన జ్యోతిర్లింగాలు ఉన్నాయి – వాటిలో కేదార్, సోమేశ్వర్, నాఈశ్వర్, మల్లికార్జున్ మొదలైనవి ప్రసిద్ధం. ఇవి శివుని పవిత్ర రూపాలను సూచిస్తాయి.</p>
+      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
     </div>
   </div>
 
   <script>
-    function toggleContent(heading, id) {
+    function toggleContent(btn, id) {
       const content = document.getElementById(id);
-      const isActive = heading.classList.contains('active');
-      const allContents = document.querySelectorAll('.content-box');
-      const allHeadings = document.querySelectorAll('h2');
+      const isVisible = content.style.display === 'block';
 
-      allContents.forEach(c => c.style.display = 'none');
-      allHeadings.forEach(h => h.classList.remove('active'));
+      document.querySelectorAll('.content-box').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('h2').forEach(h => h.classList.remove('active'));
 
-      if (!isActive) {
+      if (!isVisible) {
         content.style.display = 'block';
-        heading.classList.add('active');
-      }
-    }
-
-    const videos = [
-      "https://www.youtube.com/embed/FeerEgUfJik",
-      "https://www.youtube.com/embed/oD4XMHFxKZg",
-      "https://www.youtube.com/embed/2ppWXMdbKoM",
-      "https://www.youtube.com/embed/P0XpOUJBxpw",
-      "https://www.youtube.com/embed/YpgljreMaGY"
-    ];
-
-    let currentVideoIndex = 0;
-
-    function toggleVideoSection() {
-      const section = document.getElementById('videoSection');
-      const iframe = document.getElementById('poojaVideo');
-      if (section.style.display === 'none') {
-        section.style.display = 'block';
-        iframe.src = videos[currentVideoIndex];
+        btn.classList.add('active');
       } else {
-        section.style.display = 'none';
-        iframe.src = '';
+        content.style.display = 'none';
+        btn.classList.remove('active');
       }
+
+      if (navigator.vibrate) navigator.vibrate(40);
     }
 
-    function changeVideo(direction) {
-      currentVideoIndex += direction;
-      if (currentVideoIndex < 0) currentVideoIndex = 0;
-      if (currentVideoIndex >= videos.length) currentVideoIndex = videos.length - 1;
-      document.getElementById('poojaVideo').src = videos[currentVideoIndex];
+    function readText(button) {
+      const text = button.previousElementSibling.innerText;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'te-IN';
+      speechSynthesis.speak(utterance);
+      if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
     }
   </script>
 </body>
