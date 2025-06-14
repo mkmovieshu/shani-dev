@@ -1,144 +1,161 @@
-
 <!DOCTYPE html>
 <html lang="te">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>శివుడు</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
-
     body {
-      font-family: 'Noto Sans Telugu', sans-serif;
-      background: linear-gradient(#fff9f0, #ffe0b2);
-      margin: 20px;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .page-container {
-      background: #fffefc;
-      border: 5px solid #d67f2a;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      width: 90%;
-      max-width: 800px;
-      padding: 30px;
-      position: relative;
+      font-family: 'Noto Serif Telugu', serif;
+      background: linear-gradient(#fffaf0, #f0f8ff);
+      color: #2c2c2c;
+      padding: 10px;
     }
 
     h1 {
-      font-family: 'Baloo Tammudu 2', cursive;
-      font-size: 38px;
       text-align: center;
-      color: #6a1b09;
-      margin-top: 0;
-    }
-
-    .deity-image {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 140px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      color: #4a148c;
     }
 
     h2 {
-      background: #e65100;
-      color: #fff;
-      padding: 12px;
-      border-radius: 15px;
-      cursor: pointer;
-      margin-top: 20px;
-      text-align: center;
-      font-size: 22px;
-    }
-
-    .content-box {
-      display: none;
-      background: #fff3e0;
-      padding: 15px;
-      margin-top: 10px;
-      border-left: 5px solid #ff9800;
-      border-radius: 10px;
-      font-size: 16px;
-      line-height: 1.7;
-      position: relative;
-    }
-
-    .reader-buttons {
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .reader-buttons button {
-      flex: 1;
-      background: #00796b;
-      color: white;
-      border: none;
+      background-color: #d1c4e9;
       padding: 10px;
-      border-radius: 12px;
       cursor: pointer;
+      border-radius: 8px;
     }
 
-    .reader-buttons button:hover {
-      background: #004d40;
+    .content {
+      display: none;
+      padding: 10px;
+      background: #f3e5f5;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    img.top-image {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #7b1fa2;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+
+    button:hover {
+      background-color: #6a1b9a;
     }
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <img src="images/1747465495797.jpg" alt="Shiva" class="deity-image" />
-    <h1>🕉 శివుడు 🕉</h1>
 
-    <h2 onclick="toggleSection('section1')">శివుని అవతారం</h2>
-    <div id="section1" class="content-box">
-      <p>
-        శివుడి జననం గురించి హిందూ పురాణాల్లో అనేక కథలు ఉన్నాయి. ఆయనను స్వయంభూవుగా భావిస్తారు. పార్వతీ దేవిని వివాహం చేసుకోవడం ఒక అవతారం మాత్రమే.
-      </p>
-      <div class="reader-buttons">
-        <button onclick="speakText(this)">🔊 చదవండి</button>
-        <button onclick="stopSpeech()">🛑 ఆపు</button>
+  <img src="images/1749921369605.jpg" alt="శివుడు" class="top-image" />
+
+  <h1>శివుడు</h1>
+
+  <div style="text-align:center;">
+    <button onclick="toggleSpeech()">🔈 పఠించు / ఆపు</button>
+  </div>
+
+  <h2 onclick="toggleSection(this, 'avataram')">అవతారం</h2>
+  <div id="avataram" class="content">
+    శివుడు హిందూ ధర్మంలో అత్యంత శక్తిమంతుడైన దేవుడు. ఆయనను మహాదేవుడిగా, నృత్యప్రియుడిగా "నటరాజ" రూపంలో, భస్మధారీగా పశుపతిగా పూజిస్తారు.
+  </div>
+
+  <h2 onclick="toggleSection(this, 'mahimalu')">మహిమలు</h2>
+  <div id="mahimalu" class="content">
+    శివుని మహిమలు అనంతం. భక్తుడు ఆయనను పిలిచినంత మాత్రాన వెంటనే కరుణ చూపుతారు. మహాశివరాత్రి రోజున ఉపవాసం, శివలింగ అభిషేకం చేస్తే అశీర్వాదం కలుగుతుంది.
+  </div>
+
+  <h2 onclick="toggleSection(this, 'alayalu')">ఆలయాలు</h2>
+  <div id="alayalu" class="content">
+    శివునికి సమర్పించబడిన ప్రసిద్ధ ఆలయాల్లో కాశీ విశ్వనాథ్, అరుణాచలేశ్వర (తిరువన్నామలై), శ్రీశైలం, కేదారనాథ్, భీమేశ్వర ఆలయాలు ముఖ్యమైనవి.
+  </div>
+
+  <h2 onclick="toggleSection(this, 'pooja')">పూజా విధానం</h2>
+  <div id="pooja" class="content">
+    శివుని అభిషేకం ప్రధానమైన పూజా విధానం. బిల్వదళాలు, గంగాజలం, పంచామృతంతో పూజిస్తారు. సోమవారం శివునికి అత్యంత ప్రీతికరమైన రోజు.
+
+    <h3 onclick="toggleVideos()" style="cursor: pointer; background: #c8e6c9; padding: 10px; margin-top: 15px; border-radius: 8px;">▶️ వీడియోలు చూడండి</h3>
+    
+    <div id="videoGallery" style="display: none; text-align: center; margin-top: 10px;">
+      <div id="videoPlayer">
+        <iframe id="ytPlayer" width="100%" height="220" src="https://www.youtube.com/embed/2MTSi1rGcVg" frameborder="0" allowfullscreen></iframe>
       </div>
-    </div>
-
-    <h2 onclick="toggleSection('section2')">శివుడి మహిమలు</h2>
-    <div id="section2" class="content-box">
-      <p>
-        శివుడు సర్వశక్తిమంతుడు. భక్తులకు వెంటనే ప్రసన్నుడు. ఆయనను మహాదేవుడిగా పిలుస్తారు.
-      </p>
-      <div class="reader-buttons">
-        <button onclick="speakText(this)">🔊 చదవండి</button>
-        <button onclick="stopSpeech()">🛑 ఆపు</button>
+      <div style="margin-top: 10px;">
+        <button onclick="prevVideo()">◀️ ముందుకు</button>
+        <button onclick="nextVideo()">▶️ వెనక్కు</button>
       </div>
     </div>
   </div>
 
+  <h2 onclick="toggleSection(this, 'videos')">విశేషాలు</h2>
+  <div id="videos" class="content">
+    శివునిపై అనేక సినిమాలు, సంగీతాలు, డాక్యుమెంటరీలు రూపొందించబడ్డాయి. వాటిలో "శంకరాభరణం", "ఓం నమః శివాయ" వంటి సినిమాలు ప్రముఖంగా నిలిచాయి.
+  </div>
+
   <script>
-    function toggleSection(id) {
-      const box = document.getElementById(id);
-      if (box.style.display === "block") {
-        box.style.display = "none";
+    function toggleSection(header, id) {
+      const section = document.getElementById(id);
+      const allSections = document.querySelectorAll('.content');
+      allSections.forEach(sec => {
+        if (sec.id !== id) sec.style.display = 'none';
+      });
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+      navigator.vibrate(100);
+    }
+
+    let speech;
+    function toggleSpeech() {
+      if (!speech || speech.paused || speech.ended) {
+        const text = document.body.innerText;
+        speech = new SpeechSynthesisUtterance(text);
+        speech.lang = 'te-IN';
+        window.speechSynthesis.speak(speech);
       } else {
-        document.querySelectorAll('.content-box').forEach(el => el.style.display = "none");
-        box.style.display = "block";
-        window.navigator.vibrate(100);
+        window.speechSynthesis.cancel();
       }
     }
 
-    function speakText(button) {
-      stopSpeech();
-      const text = button.closest('.content-box').innerText;
-      const msg = new SpeechSynthesisUtterance(text);
-      msg.lang = 'te-IN';
-      window.speechSynthesis.speak(msg);
+    // Video section
+    const videos = [
+      "https://www.youtube.com/embed/2MTSi1rGcVg",
+      "https://www.youtube.com/embed/lY0tzM0nKFA",
+      "https://www.youtube.com/embed/yYpq7T7I4Kc",
+      "https://www.youtube.com/embed/ECwouFzhOBg",
+      "https://www.youtube.com/embed/MtG3soGDtRc"
+    ];
+
+    let currentIndex = 0;
+
+    function toggleVideos() {
+      const section = document.getElementById("videoGallery");
+      section.style.display = section.style.display === "block" ? "none" : "block";
     }
 
-    function stopSpeech() {
-      window.speechSynthesis.cancel();
+    function updateVideo() {
+      document.getElementById("ytPlayer").src = videos[currentIndex];
+    }
+
+    function nextVideo() {
+      currentIndex = (currentIndex + 1) % videos.length;
+      updateVideo();
+    }
+
+    function prevVideo() {
+      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+      updateVideo();
     }
   </script>
+
 </body>
 </html>
