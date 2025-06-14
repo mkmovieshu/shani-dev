@@ -1,143 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="te">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>పార్వతి దేవి</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
-
     body {
       font-family: 'Noto Sans Telugu', sans-serif;
-      background: linear-gradient(#fff9f0, #ffe0b2);
-      margin: 20px;
-      padding: 0;
+      background: linear-gradient(#fffaf0, #fff3e0);
+      margin: 0;
+      padding: 20px;
       display: flex;
       justify-content: center;
     }
 
-    .page-container {
-      background: #fffefc;
-      border: 5px solid #d67f2a;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      width: 90%;
+    .container {
+      background: #fff8e1;
+      border: 5px solid #ff9800;
+      border-radius: 20px;
+      padding: 25px;
       max-width: 800px;
-      padding: 30px;
-      position: relative;
+      width: 100%;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
 
     h1 {
+      text-align: center;
+      color: #880e4f;
       font-family: 'Baloo Tammudu 2', cursive;
       font-size: 38px;
-      text-align: center;
-      color: #6a1b09;
-      margin-top: 0;
+      margin-bottom: 20px;
     }
 
-    .deity-image {
+    img.devi-img {
       display: block;
-      margin: 0 auto 20px auto;
-      width: 140px;
+      margin: 0 auto 20px;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 3px solid #f06292;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     h2 {
-      background: #e65100;
-      color: #fff;
+      background: #ec407a;
+      color: white;
       padding: 12px;
-      border-radius: 15px;
+      border-radius: 10px;
       cursor: pointer;
       margin-top: 20px;
-      text-align: center;
       font-size: 22px;
     }
 
-    .content-box {
+    h2:hover {
+      background: #d81b60;
+    }
+
+    .content {
       display: none;
+      margin-top: 10px;
       background: #fff3e0;
       padding: 15px;
-      margin-top: 10px;
-      border-left: 5px solid #ff9800;
+      border-left: 5px solid #e91e63;
       border-radius: 10px;
-      font-size: 16px;
+      color: #4e342e;
+      font-size: 17px;
       line-height: 1.7;
-      position: relative;
     }
 
-    .reader-buttons {
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
+    .audio-controls {
+      margin-top: 20px;
+      text-align: center;
     }
 
-    .reader-buttons button {
-      flex: 1;
-      background: #00796b;
+    .audio-controls button {
+      background: #f06292;
       color: white;
       border: none;
-      padding: 10px;
-      border-radius: 12px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 18px;
       cursor: pointer;
     }
 
-    .reader-buttons button:hover {
-      background: #004d40;
+    .audio-controls button:hover {
+      background: #c2185b;
     }
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <img src="images/1747465495797.jpg" alt="Shiva" class="deity-image" />
-    <h1>🕉 పార్వతి దేవి 🕉</h1>
+  <div class="container">
+    <h1>🌸 పార్వతి దేవి 🌸</h1>
+    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1749921235243.jpg" class="devi-img" alt="పార్వతి దేవి" />
 
-    <h2 onclick="toggleSection('section1')">శివుని అవతారం</h2>
-    <div id="section1" class="content-box">
-      <p>
-        పార్వతి దేవి యొక్క జననం గురించి హిందూ పురాణాల్లో అనేక కథలు ఉన్నాయి. ఆయనను స్వయంభూవుగా భావిస్తారు. పార్వతీ దేవిని వివాహం చేసుకోవడం ఒక అవతారం మాత్రమే.
-      </p>
-      <div class="reader-buttons">
-        <button onclick="speakText(this)">🔊 చదవండి</button>
-        <button onclick="stopSpeech()">🛑 ఆపు</button>
-      </div>
+    <h2 onclick="toggleSection(this, 'avataaram')">అవతారం</h2>
+    <div id="avataaram" class="content">
+      పార్వతి దేవి శివుని అర్ధాంగిని. ఆమె శక్తిగా, అమ్మవారిగా, మాతృరూపిణిగా పూజించబడుతుంది. ఆమెకు అనేక రూపాలు ఉన్నాయి: ఊర్జస్విని, అనసూయ, గౌరీ, దుర్గా, కాళి, లలితా, అన్నపూర్ణ దేవి మొదలైనవి.
     </div>
 
-    <h2 onclick="toggleSection('section2')">పార్వతి దేవి యొక్క మహిమలు</h2>
-    <div id="section2" class="content-box">
-      <p>
-        పార్వతి దేవి సర్వశక్తిమంతుడు. భక్తులకు వెంటనే ప్రసన్నుడు. ఆయనను మహాదేవుడిగా పిలుస్తారు.
-      </p>
-      <div class="reader-buttons">
-        <button onclick="speakText(this)">🔊 చదవండి</button>
-        <button onclick="stopSpeech()">🛑 ఆపు</button>
-      </div>
+    <h2 onclick="toggleSection(this, 'mahima')">మహిమలు</h2>
+    <div id="mahima" class="content">
+      పార్వతి దేవి అనగా అనర్గలమైన ప్రేమ, శక్తి మరియు క్షమ యొక్క రూపం. శివుని తపస్సుతో ఆమె భూమిపై అవతరించి, తీవ్రమైన తపస్సుతో శివుడిని ప్రాప్తించింది. ఆమె ద్వారా జగత్తుకి ఉత్పత్తి, స్థితి, లయ సృష్టించబడతాయి.
+    </div>
+
+    <h2 onclick="toggleSection(this, 'pooja')">పూజా విధానం</h2>
+    <div id="pooja" class="content">
+      పార్వతి దేవిని శుభం, ఐశ్వర్యం, గృహసౌఖ్యం కోరి పూజిస్తారు. తులసి, కుంకుమ, లాలిపూలతో పూజ చేస్తారు. శుక్రవారాలు ప్రత్యేకంగా ఆమెకు అంకితమైనవిగా పరిగణించబడతాయి.
+    </div>
+
+    <div class="audio-controls">
+      <button id="toggleSpeechBtn" onclick="toggleSpeech()">🔊 చదువు</button>
     </div>
   </div>
 
   <script>
-    function toggleSection(id) {
-      const box = document.getElementById(id);
-      if (box.style.display === "block") {
-        box.style.display = "none";
+    function toggleSection(btn, id) {
+      navigator.vibrate(50);
+      const content = document.getElementById(id);
+      const isVisible = content.style.display === "block";
+      document.querySelectorAll(".content").forEach(div => div.style.display = "none");
+      content.style.display = isVisible ? "none" : "block";
+      stopSpeech();
+    }
+
+    let synth = window.speechSynthesis;
+    let isSpeaking = false;
+
+    function toggleSpeech() {
+      const btn = document.getElementById("toggleSpeechBtn");
+      if (isSpeaking) {
+        stopSpeech();
+        btn.innerText = "🔊 చదువు";
+        isSpeaking = false;
       } else {
-        document.querySelectorAll('.content-box').forEach(el => el.style.display = "none");
-        box.style.display = "block";
-        window.navigator.vibrate(100);
+        const visible = [...document.querySelectorAll(".content")].find(div => div.style.display === "block");
+        if (!visible) return;
+        const utter = new SpeechSynthesisUtterance(visible.innerText);
+        utter.lang = "te-IN";
+        synth.speak(utter);
+        btn.innerText = "⏹ ఆపు";
+        isSpeaking = true;
+
+        utter.onend = () => {
+          btn.innerText = "🔊 చదువు";
+          isSpeaking = false;
+        };
       }
     }
 
-    function speakText(button) {
-      stopSpeech();
-      const text = button.closest('.content-box').innerText;
-      const msg = new SpeechSynthesisUtterance(text);
-      msg.lang = 'te-IN';
-      window.speechSynthesis.speak(msg);
-    }
-
     function stopSpeech() {
-      window.speechSynthesis.cancel();
+      if (synth.speaking) synth.cancel();
     }
   </script>
 </body>
