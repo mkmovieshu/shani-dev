@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>పార్వతి దేవి</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
+
+    body {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      background: linear-gradient(#fff9f0, #ffe0b2);
+      margin: 20px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-container {
+      background: #fffefc;
+      border: 5px solid #d67f2a;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      width: 90%;
+      max-width: 800px;
+      padding: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Baloo Tammudu 2', cursive;
+      font-size: 38px;
+      text-align: center;
+      color: #6a1b09;
+      margin-top: 0;
+    }
+
+    .deity-image {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 140px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      background: #e65100;
+      color: #fff;
+      padding: 12px;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    .content-box {
+      display: none;
+      background: #fff3e0;
+      padding: 15px;
+      margin-top: 10px;
+      border-left: 5px solid #ff9800;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .reader-buttons {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .reader-buttons button {
+      flex: 1;
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .reader-buttons button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <img src="images/1747465495797.jpg" alt="Shiva" class="deity-image" />
+    <h1>🕉 పార్వతి దేవి 🕉</h1>
+
+    <h2 onclick="toggleSection('section1')">శివుని అవతారం</h2>
+    <div id="section1" class="content-box">
+      <p>
+        పార్వతి దేవి యొక్క జననం గురించి హిందూ పురాణాల్లో అనేక కథలు ఉన్నాయి. ఆయనను స్వయంభూవుగా భావిస్తారు. పార్వతీ దేవిని వివాహం చేసుకోవడం ఒక అవతారం మాత్రమే.
+      </p>
+      <div class="reader-buttons">
+        <button onclick="speakText(this)">🔊 చదవండి</button>
+        <button onclick="stopSpeech()">🛑 ఆపు</button>
+      </div>
+    </div>
+
+    <h2 onclick="toggleSection('section2')">పార్వతి దేవి యొక్క మహిమలు</h2>
+    <div id="section2" class="content-box">
+      <p>
+        పార్వతి దేవి సర్వశక్తిమంతుడు. భక్తులకు వెంటనే ప్రసన్నుడు. ఆయనను మహాదేవుడిగా పిలుస్తారు.
+      </p>
+      <div class="reader-buttons">
+        <button onclick="speakText(this)">🔊 చదవండి</button>
+        <button onclick="stopSpeech()">🛑 ఆపు</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const box = document.getElementById(id);
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        document.querySelectorAll('.content-box').forEach(el => el.style.display = "none");
+        box.style.display = "block";
+        window.navigator.vibrate(100);
+      }
+    }
+
+    function speakText(button) {
+      stopSpeech();
+      const text = button.closest('.content-box').innerText;
+      const msg = new SpeechSynthesisUtterance(text);
+      msg.lang = 'te-IN';
+      window.speechSynthesis.speak(msg);
+    }
+
+    function stopSpeech() {
+      window.speechSynthesis.cancel();
+    }
+  </script>
+</body>
+</html>
