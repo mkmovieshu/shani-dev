@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
+
+body {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  background: linear-gradient(rgba(255, 251, 235, 0.9), rgba(255, 240, 200, 0.95)),
+    url('../images/1749921235243.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 30px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* page container */
+.page-container {
+  background: #fffde7;
+  border: 5px solid #d67f2a;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 800px;
+  padding: 30px 40px;
+  position: relative;
+}
+
+/* headings */
+h1 {
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-weight: 700;
+  font-size: 36px;
+  color: #7a3700;
+  background: linear-gradient(145deg, #f7d488, #d67f2a);
+  padding: 14px 25px;
+  border-radius: 30px 30px 20px 20px;
+  box-shadow: 4px 4px 10px #b36f19, inset 2px 2px 5px #ffdb7f;
+  text-align: center;
+  margin-bottom: 20px;
+  user-select: none;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  background: linear-gradient(145deg, #f8c291, #e94560);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 40px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  user-select: none;
+}
+
+h2.active {
+  background: linear-gradient(145deg, #004d40, #00796b);
+  color: #b2dfdb;
+}
+
+.content-box {
+  display: none;
+  margin-top: 12px;
+  font-size: 17px;
+  color: #4e342e;
+  background-color: #fff8dc;
+  padding: 14px;
+  border-left: 6px solid #ff7043;
+  border-radius: 12px;
+  line-height: 1.7;
+  box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
+}
+
+.read-btn, .pause-btn {
+  background-color: #8e44ad;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.read-btn:hover, .pause-btn:hover {
+  background-color: #732d91;
+}
