@@ -3,7 +3,7 @@
 body {
   font-family: 'Noto Sans Telugu', sans-serif;
   background: linear-gradient(rgba(255, 251, 235, 0.9), rgba(255, 240, 200, 0.95)),
-    url('../images/1749921235243.jpg') no-repeat center center fixed;
+              url('https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1749921235243.jpg') no-repeat center center fixed;
   background-size: cover;
   margin: 30px;
   padding: 0;
@@ -11,7 +11,6 @@ body {
   justify-content: center;
 }
 
-/* page container */
 .page-container {
   background: #fffde7;
   border: 5px solid #d67f2a;
@@ -23,32 +22,37 @@ body {
   position: relative;
 }
 
-/* headings */
+.god-img {
+  width: 100px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 h1 {
   font-family: 'Baloo Tammudu 2', cursive;
-  font-weight: 700;
   font-size: 36px;
-  color: #7a3700;
-  background: linear-gradient(145deg, #f7d488, #d67f2a);
-  padding: 14px 25px;
-  border-radius: 30px 30px 20px 20px;
-  box-shadow: 4px 4px 10px #b36f19, inset 2px 2px 5px #ffdb7f;
   text-align: center;
+  background: linear-gradient(145deg, #f7d488, #d67f2a);
+  padding: 12px 20px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 8px #b36f19, inset 2px 2px 5px #ffdb7f;
+  color: #6a3500;
   margin-bottom: 20px;
-  user-select: none;
-  letter-spacing: 1.5px;
 }
 
 h2 {
   background: linear-gradient(145deg, #f8c291, #e94560);
   color: white;
-  text-align: center;
   padding: 12px;
   border-radius: 40px;
   font-size: 22px;
   font-weight: 700;
-  cursor: pointer;
+  text-align: center;
   margin-top: 20px;
+  cursor: pointer;
   user-select: none;
 }
 
@@ -59,29 +63,37 @@ h2.active {
 
 .content-box {
   display: none;
-  margin-top: 12px;
-  font-size: 17px;
-  color: #4e342e;
-  background-color: #fff8dc;
-  padding: 14px;
+  background: #fff8dc;
+  padding: 16px;
   border-left: 6px solid #ff7043;
+  margin-top: 10px;
   border-radius: 12px;
-  line-height: 1.7;
   box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
 }
 
-.read-btn, .pause-btn {
+button {
   background-color: #8e44ad;
   color: white;
   padding: 8px 16px;
-  font-size: 16px;
-  border: none;
   border-radius: 20px;
-  cursor: pointer;
   margin-top: 10px;
-  margin-right: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.read-btn:hover, .pause-btn:hover {
+button:hover {
   background-color: #732d91;
+}
+
+.sub-heading {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #5e3300;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
