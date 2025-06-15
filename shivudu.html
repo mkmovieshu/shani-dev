@@ -83,83 +83,105 @@
       box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
     }
 
-    .read-btn {
+    .read-btn, .stop-btn {
       background-color: #8e44ad;
       color: white;
-      padding: 8px 16px;
-      font-size: 16px;
+      padding: 8px 14px;
+      font-size: 15px;
       border: none;
-      border-radius: 20px;
+      border-radius: 18px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-right: 8px;
     }
 
-    .read-btn:hover {
+    .read-btn:hover, .stop-btn:hover {
       background-color: #732d91;
     }
 
+    .video-section {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .video-frame {
+      width: 100%;
+      height: 220px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .video-controls button {
+      margin: 5px;
+      padding: 8px 14px;
+      font-size: 15px;
+      background-color: #ff7043;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .video-controls button:hover {
+      background-color: #e64a19;
+    }
+
     @media (max-width: 600px) {
-      .page-container {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      h2 {
-        font-size: 18px;
-        padding: 10px;
-      }
-
-      .content-box {
-        font-size: 15px;
-      }
+      h1 { font-size: 24px; }
+      h2 { font-size: 18px; padding: 10px; }
+      .content-box { font-size: 15px; }
     }
   </style>
 </head>
 <body>
   <div class="page-container">
-    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1747465495797.jpg" alt="శివుడి చిత్రం" class="god-img" />
+    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1747465495797.jpg" class="god-img" />
     <h1>🕉 శివుడు 🕉</h1>
 
-    <!-- 👉 సెక్షన్ 1 -->
     <h2 onclick="toggleContent(this, 'avataram')">శివుని అవతారం</h2>
-    <div id="avataram" class="content-box">
-      <p>శివుడు జన్మ రహితుడు. కొన్ని పురాణాల ప్రకారం ఆయన బ్రహ్మానికీ ఆధారం, విశ్వానికి మూల కారణం. శివుడు స్వయంభూ – అనగా తాను తానే ఆవిర్భవించినవాడు.</p>
-      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
-    </div>
+    <div id="avataram" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-avatharam.txt"></div>
 
-    <!-- 👉 సెక్షన్ 2 -->
     <h2 onclick="toggleContent(this, 'mahima')">శివుడి మహిమ</h2>
-    <div id="mahima" class="content-box">
-      <p>శివుడు భక్తులకు దయగలవాడు, శత్రువులకు ఉగ్రరూపుడిగా ఉంటాడు. ఆయన తాండవం సృష్టి, లయం, స్థితిని సూచిస్తుంది. శివుడు లోకాన్ని నిర్వహించే త్రిమూర్తులలో ఒకడు.</p>
-      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
-    </div>
+    <div id="mahima" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-mahimalu.txt"></div>
 
-    <!-- 👉 సెక్షన్ 3 -->
     <h2 onclick="toggleContent(this, 'alayalu')">శివుడికి ప్రసిద్ధ ఆలయాలు</h2>
-    <div id="alayalu" class="content-box">
-      <p>శ్రీశైలము, కాశీ విశ్వనాథ్, చిదంబరం, సోమనాథ్, త్రయంబకేశ్వర్ వంటి అనేక ప్రసిద్ధ ఆలయాలు శివుడికి అంకితమయ్యాయి. ఇవి పవిత్ర యాత్రాక్షేత్రాలు.</p>
-      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
-    </div>
+    <div id="alayalu" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-alayalu.txt"></div>
 
-    <!-- 👉 సెక్షన్ 4 -->
     <h2 onclick="toggleContent(this, 'pooja')">శివ పూజా విధానం</h2>
-    <div id="pooja" class="content-box">
-      <p>ప్రతిరోజూ శివునికి బిల్వదళాలు సమర్పించడం, లింగాభిషేకం చేయడం, “ఓం నమః శివాయ” జపం చేయడం శ్రేయస్కరం. సోమవారం శివుని ప్రత్యేక పూజా దినంగా భావించబడుతుంది.</p>
-      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+    <div id="pooja" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-pujalu.txt">
+      <div class="video-section">
+        <iframe id="ytplayer" class="video-frame" src="https://www.youtube.com/embed/Tz_OgtlDZ9M" allowfullscreen></iframe>
+        <div class="video-controls">
+          <button onclick="prevVideo()">⏮️ వెనక్కి</button>
+          <button onclick="nextVideo()">⏭️ ముందుకు</button>
+        </div>
+      </div>
     </div>
 
-    <!-- 👉 సెక్షన్ 5 -->
-    <h2 onclick="toggleContent(this, 'jyotirlinga')">శివ జ్యోతిర్లింగాల విశిష్టత</h2>
-    <div id="jyotirlinga" class="content-box">
-      <p>భారతదేశంలో 12 ప్రధాన జ్యోతిర్లింగాలు ఉన్నాయి – వాటిలో కేదార్, సోమేశ్వర్, నాఈశ్వర్, మల్లికార్జున్ మొదలైనవి ప్రసిద్ధం. ఇవి శివుని పవిత్ర రూపాలను సూచిస్తాయి.</p>
-      <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
-    </div>
+    <h2 onclick="toggleContent(this, 'ravana')">శివుడు & రావణుడు</h2>
+    <div id="ravana" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-ravana.txt"></div>
   </div>
 
   <script>
+    const ytLinks = [
+      "https://www.youtube.com/embed/Tz_OgtlDZ9M",
+      "https://www.youtube.com/embed/S8OLbT9LZ5c",
+      "https://www.youtube.com/embed/aCgAS0nD7XM",
+      "https://www.youtube.com/embed/W3H6pX8IgqM",
+      "https://www.youtube.com/embed/hEuDr5lvKKY"
+    ];
+    let currentIndex = 0;
+
+    function nextVideo() {
+      currentIndex = (currentIndex + 1) % ytLinks.length;
+      document.getElementById("ytplayer").src = ytLinks[currentIndex];
+    }
+
+    function prevVideo() {
+      currentIndex = (currentIndex - 1 + ytLinks.length) % ytLinks.length;
+      document.getElementById("ytplayer").src = ytLinks[currentIndex];
+    }
+
     function toggleContent(btn, id) {
       const content = document.getElementById(id);
       const isVisible = content.style.display === 'block';
@@ -170,20 +192,30 @@
       if (!isVisible) {
         content.style.display = 'block';
         btn.classList.add('active');
-      } else {
-        content.style.display = 'none';
-        btn.classList.remove('active');
+        const url = content.dataset.src;
+        if (url && !content.innerHTML.includes("read-btn")) {
+          fetch(url)
+            .then(response => response.text())
+            .then(text => {
+              content.innerHTML = `<p>${text}</p>
+                <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
+                <button class="stop-btn" onclick="stopRead()">⏹️ ఆపు</button>
+              ` + content.innerHTML;
+            });
+        }
       }
-
-      if (navigator.vibrate) navigator.vibrate(40);
     }
 
-    function readText(button) {
-      const text = button.previousElementSibling.innerText;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'te-IN';
-      speechSynthesis.speak(utterance);
-      if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
+    let speech;
+    function readText(btn) {
+      const text = btn.parentElement.querySelector('p').innerText;
+      speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'te-IN';
+      speechSynthesis.speak(speech);
+    }
+
+    function stopRead() {
+      speechSynthesis.cancel();
     }
   </script>
 </body>
