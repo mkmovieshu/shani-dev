@@ -3,220 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>శివుడు</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+Telugu&display=swap');
-
-    body {
-      font-family: 'Noto Sans Telugu', sans-serif;
-      background: linear-gradient(rgba(255, 251, 235, 0.9), rgba(255, 240, 200, 0.95)),
-        url('https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1749921235243.jpg') no-repeat center center fixed;
-      background-size: cover;
-      margin: 30px;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .page-container {
-      background: #fffde7;
-      border: 5px solid #d67f2a;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      width: 90%;
-      max-width: 800px;
-      padding: 30px 40px;
-      position: relative;
-    }
-
-    .god-img {
-      width: 130px;
-      border-radius: 20px;
-      display: block;
-      margin: 0 auto 20px auto;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    h1 {
-      font-family: 'Baloo Tammudu 2', cursive;
-      font-weight: 700;
-      font-size: 36px;
-      color: #7a3700;
-      background: linear-gradient(145deg, #f7d488, #d67f2a);
-      padding: 14px 25px;
-      border-radius: 30px 30px 20px 20px;
-      box-shadow: 4px 4px 10px #b36f19, inset 2px 2px 5px #ffdb7f;
-      text-align: center;
-      margin-bottom: 20px;
-      user-select: none;
-      letter-spacing: 1.5px;
-    }
-
-    h2 {
-      background: linear-gradient(145deg, #f8c291, #e94560);
-      color: white;
-      text-align: center;
-      padding: 12px;
-      border-radius: 40px;
-      font-size: 22px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 20px;
-      user-select: none;
-    }
-
-    h2.active {
-      background: linear-gradient(145deg, #004d40, #00796b);
-      color: #b2dfdb;
-    }
-
-    .content-box {
-      display: none;
-      margin-top: 12px;
-      font-size: 17px;
-      color: #4e342e;
-      background-color: #fff8dc;
-      padding: 14px;
-      border-left: 6px solid #ff7043;
-      border-radius: 12px;
-      line-height: 1.7;
-      box-shadow: inset 2px 2px 8px rgba(255, 160, 122, 0.4);
-    }
-
-    .read-btn, .stop-btn {
-      background-color: #8e44ad;
-      color: white;
-      padding: 8px 14px;
-      font-size: 15px;
-      border: none;
-      border-radius: 18px;
-      cursor: pointer;
-      margin-right: 8px;
-    }
-
-    .read-btn:hover, .stop-btn:hover {
-      background-color: #732d91;
-    }
-
-    .video-section {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .video-frame {
-      width: 100%;
-      height: 220px;
-      border: none;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .video-controls button {
-      margin: 5px;
-      padding: 8px 14px;
-      font-size: 15px;
-      background-color: #ff7043;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .video-controls button:hover {
-      background-color: #e64a19;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 24px; }
-      h2 { font-size: 18px; padding: 10px; }
-      .content-box { font-size: 15px; }
-    }
-  </style>
+  <title>🕉 శివుడు 🕉</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page-container">
-    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1747465495797.jpg" class="god-img" />
+    <img src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/images/1747465495797.jpg" alt="శివుడి చిత్రం" class="god-img" />
     <h1>🕉 శివుడు 🕉</h1>
 
+    <!-- 👉 అవతారం -->
     <h2 onclick="toggleContent(this, 'avataram')">శివుని అవతారం</h2>
-    <div id="avataram" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-avatharam.txt"></div>
+    <div id="avataram" class="content-box">
+      <div class="section-text" data-url="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-avatharam.txt">లోడ్ అవుతోంది...</div>
+      <button onclick="readText(this)">🔊 ప్లే</button>
+      <button onclick="stopText()">⏹ పాస్</button>
+    </div>
 
-    <h2 onclick="toggleContent(this, 'mahima')">శివుడి మహిమ</h2>
-    <div id="mahima" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-mahimalu.txt"></div>
+    <!-- 👉 మహిమలు -->
+    <h2 onclick="toggleContent(this, 'mahimalu')">శివుడి మహిమలు</h2>
+    <div id="mahimalu" class="content-box">
+      <div class="section-text" data-url="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-mahimalu.txt">లోడ్ అవుతోంది...</div>
+      <button onclick="readText(this)">🔊 ప్లే</button>
+      <button onclick="stopText()">⏹ పాస్</button>
+    </div>
 
-    <h2 onclick="toggleContent(this, 'alayalu')">శివుడికి ప్రసిద్ధ ఆలయాలు</h2>
-    <div id="alayalu" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-alayalu.txt"></div>
+    <!-- 👉 ఆలయాలు -->
+    <h2 onclick="toggleContent(this, 'alayalu')">ప్రసిద్ధ ఆలయాలు</h2>
+    <div id="alayalu" class="content-box">
+      <div class="section-text" data-url="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-alayalu.txt">లోడ్ అవుతోంది...</div>
+      <button onclick="readText(this)">🔊 ప్లే</button>
+      <button onclick="stopText()">⏹ పాస్</button>
+    </div>
 
-    <h2 onclick="toggleContent(this, 'pooja')">శివ పూజా విధానం</h2>
-    <div id="pooja" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-pujalu.txt">
-      <div class="video-section">
-        <iframe id="ytplayer" class="video-frame" src="https://www.youtube.com/embed/Tz_OgtlDZ9M" allowfullscreen></iframe>
+    <!-- 👉 పూజలు -->
+    <h2 onclick="toggleContent(this, 'pujalu')">పూజా విధానం</h2>
+    <div id="pujalu" class="content-box">
+      <div class="section-text" data-url="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-pujalu.txt">లోడ్ అవుతోంది...</div>
+      <button onclick="readText(this)">🔊 ప్లే</button>
+      <button onclick="stopText()">⏹ పాస్</button>
+
+      <!-- 👉 వీడియోలు -->
+      <h3 class="sub-heading">📺 పూజా వీడియోలు</h3>
+      <div class="video-box">
+        <iframe id="yt-player" width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
         <div class="video-controls">
-          <button onclick="prevVideo()">⏮️ వెనక్కి</button>
-          <button onclick="nextVideo()">⏭️ ముందుకు</button>
+          <button onclick="prevVideo()">⬅️ వెనక్కి</button>
+          <button onclick="nextVideo()">➡️ ముందుకు</button>
         </div>
       </div>
     </div>
 
-    <h2 onclick="toggleContent(this, 'ravana')">శివుడు & రావణుడు</h2>
-    <div id="ravana" class="content-box" data-src="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-ravana.txt"></div>
+    <!-- 👉 రవాణా -->
+    <h2 onclick="toggleContent(this, 'ravana')">రవాణా సౌకర్యాలు</h2>
+    <div id="ravana" class="content-box">
+      <div class="section-text" data-url="https://raw.githubusercontent.com/mkmovieshu/shani-dev/main/Text/shiva-ravana.txt">లోడ్ అవుతోంది...</div>
+      <button onclick="readText(this)">🔊 ప్లే</button>
+      <button onclick="stopText()">⏹ పాస్</button>
+    </div>
   </div>
 
-  <script>
-    const ytLinks = [
-      "https://www.youtube.com/embed/Tz_OgtlDZ9M",
-      "https://www.youtube.com/embed/S8OLbT9LZ5c",
-      "https://www.youtube.com/embed/aCgAS0nD7XM",
-      "https://www.youtube.com/embed/W3H6pX8IgqM",
-      "https://www.youtube.com/embed/hEuDr5lvKKY"
-    ];
-    let currentIndex = 0;
-
-    function nextVideo() {
-      currentIndex = (currentIndex + 1) % ytLinks.length;
-      document.getElementById("ytplayer").src = ytLinks[currentIndex];
-    }
-
-    function prevVideo() {
-      currentIndex = (currentIndex - 1 + ytLinks.length) % ytLinks.length;
-      document.getElementById("ytplayer").src = ytLinks[currentIndex];
-    }
-
-    function toggleContent(btn, id) {
-      const content = document.getElementById(id);
-      const isVisible = content.style.display === 'block';
-
-      document.querySelectorAll('.content-box').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('h2').forEach(h => h.classList.remove('active'));
-
-      if (!isVisible) {
-        content.style.display = 'block';
-        btn.classList.add('active');
-        const url = content.dataset.src;
-        if (url && !content.innerHTML.includes("read-btn")) {
-          fetch(url)
-            .then(response => response.text())
-            .then(text => {
-              content.innerHTML = `<p>${text}</p>
-                <button class="read-btn" onclick="readText(this)">📢 చదవు</button>
-                <button class="stop-btn" onclick="stopRead()">⏹️ ఆపు</button>
-              ` + content.innerHTML;
-            });
-        }
-      }
-    }
-
-    let speech;
-    function readText(btn) {
-      const text = btn.parentElement.querySelector('p').innerText;
-      speech = new SpeechSynthesisUtterance(text);
-      speech.lang = 'te-IN';
-      speechSynthesis.speak(speech);
-    }
-
-    function stopRead() {
-      speechSynthesis.cancel();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
